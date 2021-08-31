@@ -1,0 +1,147 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container{
+  width: 95%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#calculator{
+  /* border: 1px solid lightgray; */
+  background: white;
+  border-radius: 10px;
+  width: 350px;
+  margin: auto;
+  padding: 0 25px;
+  font-size: 1rem;
+  font-weight: 100;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+#calculator input{
+  box-sizing: border-box;
+  width: 90%;
+  padding: 8px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#calculator button{
+  width: 10%;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: #cf7d2a;
+}
+
+#calculator button:hover{
+  background-color: #cf7d2a;
+}
+
+#calculator #btnCalculator{
+  border-radius: 5px;
+  transform: scale(1.0);
+  width:fit-content;
+  transition: all 300ms ease-in;
+}
+
+#calculator #btnCalculator:hover{
+  border-radius: 5px;
+  width:fit-content;
+  transform: scale(1.1);
+}
+
+#quality{
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#tip-amount{
+  visibility: hidden;
+  min-width: 250px; /* Set a default minimum width */
+  margin: auto;
+  background: #cf7d2a;
+  color: #fff; /* White text color */
+  bottom: 30px; /* 30px from the bottom */
+  text-align: center; /* Centered text */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  border-radius: 10px;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#tip-amount.show{
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@media (max-width: 480px){
+  .calculator input{
+    width: 85%;
+  }
+
+  .calculator button{
+    width: 15%;
+  }
+} 
+
+@media (max-width: 320px){
+  .calculator input{
+    width: 80%;
+  }
+
+  .calculator button{
+    width: 20%;
+  }
+} 
+
